@@ -32,7 +32,6 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
-    'import/no-extraneous-dependencies': 'off',
     'indent': ['error', 2],
     'object-curly-newline': [
       'error',
@@ -41,18 +40,6 @@ module.exports = {
         ObjectPattern: { multiline: true, minProperties: 6 },
         ImportDeclaration: { multiline: true, minProperties: 5 },
         ExportDeclaration: { multiline: true, minProperties: 5 },
-      },
-    ],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          '**/test.js', // Example: allowing devDependencies in test files
-          '**/*.test.js', // or any other pattern for test files
-          '**/webpack.config.js', // if you're using Webpack and want to allow devDependencies here
-        ],
-        optionalDependencies: false,
-        peerDependencies: false,
       },
     ],
     'import/no-extraneous-dependencies': [
@@ -110,7 +97,6 @@ module.exports = {
     'max-statements-per-line': ['error', { max: 1 }],
     complexity: ['error', 10],
     'max-nested-callbacks': ['error', 10],
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/order': [
       'error',
       {
