@@ -9,7 +9,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  plugins: ['@typescript-eslint/eslint-plugin', 'jsdoc'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'jsdoc', 'import'],
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
@@ -30,9 +30,8 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': 'off',
     'eol-last': ['error', 'always'],
-    'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
-    'indent': ['error', 2],
+    indent: ['error', 2],
     'object-curly-newline': [
       'error',
       {
@@ -87,7 +86,7 @@ module.exports = {
         requireReturnDescription: true,
       },
     ],
-    "prettier/prettier": "off",
+    'prettier/prettier': 'off',
     'max-lines-per-function': ['error', { max: 250, skipBlankLines: true, skipComments: true }],
     'max-len': ['error', { code: 180, ignoreUrls: true }],
     'max-lines': ['error', { max: 600, skipBlankLines: true, skipComments: true }],
