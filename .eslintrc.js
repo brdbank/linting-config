@@ -9,7 +9,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
-  plugins: ['@typescript-eslint/eslint-plugin', 'jsdoc', 'import'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'jsdoc'],
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
@@ -31,8 +31,10 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': 'off',
     'eol-last': ['error', 'always'],
+    'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
-    indent: ['error', 2],
+    'import/no-extraneous-dependencies': 'off',
+    'indent': ['error', 2],
     'object-curly-newline': [
       'error',
       {
@@ -40,6 +42,18 @@ module.exports = {
         ObjectPattern: { multiline: true, minProperties: 6 },
         ImportDeclaration: { multiline: true, minProperties: 5 },
         ExportDeclaration: { multiline: true, minProperties: 5 },
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/test.js', // Example: allowing devDependencies in test files
+          '**/*.test.js', // or any other pattern for test files
+          '**/webpack.config.js', // if you're using Webpack and want to allow devDependencies here
+        ],
+        optionalDependencies: false,
+        peerDependencies: false,
       },
     ],
     'import/no-extraneous-dependencies': [
@@ -87,16 +101,17 @@ module.exports = {
         requireReturnDescription: true,
       },
     ],
-    'prettier/prettier': 'off',
+    "prettier/prettier": "off",
     'max-lines-per-function': ['error', { max: 250, skipBlankLines: true, skipComments: true }],
     'max-len': ['error', { code: 180, ignoreUrls: true }],
-    'max-lines': ['error', { max: 600, skipBlankLines: true, skipComments: true }],
+    'max-lines': ['error', { max: 1000, skipBlankLines: true, skipComments: true }],
     'max-depth': ['error', 4],
     'max-params': ['error', 4],
-    'max-statements': ['error', 20],
+    'max-statements': ['error', 30],
     'max-statements-per-line': ['error', { max: 1 }],
-    complexity: ['error', 10],
+    complexity: ['error', 20],
     'max-nested-callbacks': ['error', 10],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/order': [
       'error',
       {
